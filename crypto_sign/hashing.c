@@ -54,6 +54,7 @@ int main(void)
 
     // Signing
     hash_cycles = 0;
+    memset(sm, 0, MLEN);
     t0 = hal_get_time();
     MUPQ_crypto_sign(sm, &smlen, sm, MLEN, sk);
     t1 = hal_get_time();

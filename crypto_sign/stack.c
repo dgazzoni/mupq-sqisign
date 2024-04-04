@@ -52,7 +52,7 @@ static int test_sign(void) {
   stack_key_gen = hal_checkstack();
 
   // Bob derives a secret key and creates a response
-  randombytes(m, MLEN);
+  memset(m, 0, MLEN);
   hal_spraystack();
   MUPQ_crypto_sign(sm, &smlen, m, MLEN, sk);
   stack_sign = hal_checkstack();
