@@ -79,12 +79,11 @@ void id2iso_long_two_isog_finalize(id2iso_long_two_isog_t *isog)
 void id2iso_compressed_long_two_isog_init(id2iso_compressed_long_two_isog_t *zip, const size_t length)
 {
     zip->length = length;
-    zip->zip_chain = malloc(length * sizeof(digit_t[NWORDS_ORDER]));
 }
 
 void id2iso_compressed_long_two_isog_finalize(id2iso_compressed_long_two_isog_t *zip)
 {
-    free(zip->zip_chain);
+    (void)zip;
 }
 
 #if defined(ENABLE_SIGN)

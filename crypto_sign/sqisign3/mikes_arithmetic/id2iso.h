@@ -8,6 +8,8 @@
 #ifndef ID2ISO_H
 #define ID2ISO_H
 
+#include "encoded_sizes.h"
+
 #if defined(ENABLE_SIGN)
 #include <intbig.h>
 #include <quaternion.h>
@@ -44,7 +46,7 @@ typedef struct id2iso_long_two_isog {
 */
 typedef struct id2iso_compressed_long_two_isog {
     unsigned short length; ///< the number of smaller two isogeny chains
-    digit_t (*zip_chain)[NWORDS_ORDER]; ///< the chain of two isogeny, compressed
+    digit_t zip_chain[ZIP_CHAIN_LEN][NWORDS_ORDER]; ///< the chain of two isogeny, compressed
     unsigned char bit_first_step ; ///< the bit for the first step
 } id2iso_compressed_long_two_isog_t;
 
