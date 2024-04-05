@@ -1,5 +1,4 @@
 #include "curve_extras.h"
-#include "tedwards.h"
 #include <ec_params.h>
 #include <assert.h>
 
@@ -600,7 +599,7 @@ void recover_y(fp2_t* y, fp2_t const* Px, ec_curve_t const* curve)
 }
 
 
-static int mp_compare(digit_t* a, digit_t* b, unsigned int nwords)
+static int mp_compare(const digit_t* a, const digit_t* b, unsigned int nwords)
 { // Multiprecision comparison, a=b? : (1) a>b, (0) a=b, (-1) a<b
 
     for (int i = nwords-1; i >= 0; i--) {
